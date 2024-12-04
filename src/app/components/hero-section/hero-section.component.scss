@@ -1,0 +1,44 @@
+.home-section {
+  background-image: url("/images/banner-hero.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  width: 100%;
+  float: left;
+  padding: 0 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-bottom: 40px;
+}
+
+.wrapper-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+  width: 100%;
+
+  div {
+    color: var(--white);
+    padding: 0 0 140px 20px;
+
+    h1 {
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 1.1;
+      -webkit-text-stroke: 1px;
+      -webkit-text-stroke-color: var(--gray);
+    }
+  }
+
+  img {
+    height: 340px;
+    z-index: 1;
+    border-radius: 50%;
+    border: 6px solid var(--orange);
+    background-color: var(--gray);
+  }
+}
