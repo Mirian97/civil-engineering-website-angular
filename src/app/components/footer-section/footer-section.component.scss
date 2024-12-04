@@ -1,11 +1,12 @@
 .call-me-section {
   background-color: #f9f9f9;
-  margin-top: auto;
 
   .section {
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin: auto;
+    gap: 16px;
+    text-align: center;
   }
 
   h4 {
@@ -50,6 +51,15 @@
         background-color: var(--white);
         color: var(--gray);
       }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .call-me-section {
+    .section {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 28px 0;
   align-self: start;
   margin: 0;
   align-items: center;
@@ -13,7 +13,26 @@
   }
 
   .navbar {
-    display: flex;
     gap: 36px;
+    display: none;
+  }
+}
+
+.menu {
+  all: unset;
+  background-color: none;
+}
+
+@media (min-width: 764px) {
+  .menu {
+    display: none;
+  }
+
+  .header {
+    padding: 40px 0;
+
+    .navbar {
+      display: flex;
+    }
   }
 }

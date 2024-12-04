@@ -1,6 +1,6 @@
 .contact-floating {
   position: fixed;
-  right: 32px;
+  right: 20px;
   top: 120px;
   display: flex;
   flex-direction: column;
@@ -22,5 +22,11 @@ a {
     scale: 1.1;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
       rgba(17, 17, 26, 0.1) 0px 4px 16px;
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-floating {
+    right: 32px;
   }
 }

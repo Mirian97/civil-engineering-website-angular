@@ -2,6 +2,9 @@
   <a routerLink="/">
     <img src="/svgs/primary-logo.svg" alt="Logo ERF" class="logo" />
   </a>
+  <button class="menu">
+    <app-svg-icon iconName="menu" [height]="32" [width]="32" fill="#FFF" />
+  </button>
   <ul class="navbar">
     @for (item of navbarList; track item.location) {
     <app-navbar-item [location]="item.location" [name]="item.name">

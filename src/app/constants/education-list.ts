@@ -4,7 +4,7 @@ export const EDUCATION_LIST = [
     duration: 'Set/2021 - Abr/2022',
     title: 'Engenharia de Concreto Armado',
     description:
-      'Capacitar engenheiros como especialistas em estruturas de concreto armado, oferecendo sólida formação teórica, prática e metodológica. Abordar construção, manutenção e conservação de edificações residenciais, comerciais, industriais e portuárias. Desenvolver habilidades para atuação em projetos e execução de obras na área.',
+      'Capacitação de engenheiros como especialistas em estruturas de concreto armado, oferecendo sólida formação teórica, prática e metodológica. Abordando construção, manutenção e conservação de edificações residenciais, comerciais, industriais e portuárias. Além de desenvolver habilidades para atuação em projetos e execução de obras na área.',
     type: 'MBA',
   },
   {

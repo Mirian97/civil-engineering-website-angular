@@ -4,16 +4,16 @@
     @for (item of educationList; track item.title) {
     <div class="formation-item">
       <div>
-        <h4 class="university">{{ item.university }}</h4>
+        <h4 class="title">{{ item.title }}</h4>
+        <p class="description">
+          {{ item.description }}
+        </p>
+      </div>
+      <div class="formation-duration">
+        <h4 class="title university">{{ item.university }}</h4>
         <p class="chip">
           {{ item.type }}
           <span>{{ item.duration }}</span>
-        </p>
-      </div>
-      <div>
-        <h4 class="university">{{ item.title }}</h4>
-        <p class="description">
-          {{ item.description }}
         </p>
       </div>
     </div>
