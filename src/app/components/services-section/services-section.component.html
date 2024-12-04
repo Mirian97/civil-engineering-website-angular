@@ -1,0 +1,16 @@
+<section id="servicos" class="section service-section">
+  <app-title-section name="Serviços Prestados" />
+  <div class="service-list">
+    @for (item of serviceList; track item.name) {
+    <div class="service-item">
+      <app-svg-icon
+        [iconName]="item.iconPath"
+        [height]="44"
+        [width]="44"
+        class="service-icon"
+      />
+      <b>{{ item.name }}</b>
+    </div>
+    }
+  </div>
+</section>
