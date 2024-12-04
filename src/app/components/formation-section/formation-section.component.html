@@ -1,0 +1,22 @@
+<section class="section formation-section" id="formacao">
+  <app-title-section name="Minha Formação" />
+  <div class="formation-list">
+    @for (item of educationList; track item.title) {
+    <div class="formation-item">
+      <div>
+        <h4 class="university">{{ item.university }}</h4>
+        <p class="chip">
+          {{ item.type }}
+          <span>{{ item.duration }}</span>
+        </p>
+      </div>
+      <div>
+        <h4 class="university">{{ item.title }}</h4>
+        <p class="description">
+          {{ item.description }}
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+</section>
