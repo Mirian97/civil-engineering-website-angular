@@ -1,0 +1,18 @@
+<section class="call-me-section">
+  <div class="section">
+    <h4>Engenharia Sob Medida para o Seu Sucesso</h4>
+    <app-button color="tertiary">Chamar agora</app-button>
+  </div>
+</section>
+<section class="footer-section">
+  <div class="section">
+    <div class="contact-list">
+      @for (item of contactList; track item.icon) {
+      <a [href]="item.link" target="_blank">
+        <app-svg-icon [iconName]="item.icon" [height]="16" [width]="16" />
+      </a>
+      }
+    </div>
+    <p>Copyright ©{{ currentYear }} | Élio Rodrigues Ferreira Engenharia</p>
+  </div>
+</section>
