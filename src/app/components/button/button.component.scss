@@ -1,0 +1,41 @@
+button {
+  all: unset;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 14px 50px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &.primary {
+    background-color: var(--yellow);
+
+    &:hover {
+      background-color: var(--gray);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--gray);
+
+    &:hover {
+      background-color: var(--yellow);
+    }
+  }
+
+  &.tertiary {
+    background-color: var(--orange);
+
+    &:hover {
+      background-color: var(--gray);
+    }
+  }
+
+  &.md {
+    font-weight: 400;
+  }
+
+  &.lg {
+    font-weight: 600;
+  }
+}
