@@ -1,0 +1,7 @@
+<div class="contact-floating">
+  @for (item of contactList; track item.icon) {
+  <a [href]="item.link" target="_blank">
+    <app-svg-icon [height]="16" [width]="16" [iconName]="item.icon" />
+  </a>
+  }
+</div>

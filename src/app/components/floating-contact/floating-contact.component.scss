@@ -1,0 +1,26 @@
+.contact-floating {
+  position: fixed;
+  right: 32px;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  color: var(--gray);
+  background-color: #b0b3b2;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--white);
+    scale: 1.1;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 4px 16px;
+  }
+}
