@@ -1,0 +1,11 @@
+.section-title {
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 24px;
+
+  span {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
