@@ -13,8 +13,8 @@ export class TitleSectionComponent implements OnInit {
   second: string = '';
 
   ngOnInit(): void {
-    const [first, second] = this.name.split(' ');
+    const [first, ...second] = this.name.split(' ');
     this.first = first;
-    this.second = second;
+    this.second = second.join(' ');
   }
 }
