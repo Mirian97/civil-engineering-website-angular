@@ -13,4 +13,6 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 export class FooterSectionComponent {
   currentYear = new Date().getFullYear();
   contactList = CONTACT_LIST_FOOTER;
+  whatsappLink = CONTACT_LIST_FOOTER.find((item) => item.icon === 'phone')
+    ?.link;
 }
