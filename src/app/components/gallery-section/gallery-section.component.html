@@ -1,0 +1,14 @@
+<section class="section gallery-section">
+  <app-title-section name="Nosso trabalho" />
+  <div class="gallery">
+    @for (item of galleryList; track item.id) {
+    <div class="gallery-item">
+      <img [src]="'/images/' + item.mainPhoto" [alt]="item.name" />
+      <p>{{ item.generalDescription }}</p>
+    </div>
+    }
+  </div>
+  <!-- <app-modal>
+    <app-carousel />
+  </app-modal> -->
+</section>
