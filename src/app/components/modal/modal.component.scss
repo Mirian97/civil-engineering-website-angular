@@ -1,0 +1,35 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.modal {
+  background-color: var(--white);
+  width: 800px;
+  max-width: 100%;
+  border-radius: 8px;
+  position: relative;
+  padding: 20px;
+
+  button {
+    all: unset;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--gray);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: rgb(241, 241, 241, 0.9);
+    }
+  }
+}
