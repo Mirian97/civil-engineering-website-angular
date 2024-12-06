@@ -18,6 +18,11 @@ export const SERVICE_LIST = [
     iconPath: 'home-work',
   },
   {
+    name: 'Desdobro',
+    description: '',
+    iconPath: 'map',
+  },
+  {
     name: 'Parecer Técnico',
     description:
       'Elaboração de pareceres técnicos especializados para análise de situações específicas relacionadas a imóveis e construção.',
