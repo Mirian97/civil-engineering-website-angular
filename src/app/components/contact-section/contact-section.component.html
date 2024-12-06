@@ -1,0 +1,26 @@
+<section class="section contact-section" id="contato">
+  <app-title-section name="Me Contate" />
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <input name="name" placeholder="Seu nome" formControlName="name" />
+    <input
+      name="email"
+      placeholder="example@gmail.com"
+      formControlName="email"
+      type="email"
+    />
+    <input
+      name="phone"
+      placeholder="00 00000-0000"
+      formControlName="phone"
+      type="tel"
+    />
+    <textarea
+      name="message"
+      placeholder="Sua mensagem"
+      rows="3"
+      formControlName="message"
+      minlength="50"
+    ></textarea>
+    <app-button color="tertiary" size="lg" type="submit">Enviar</app-button>
+  </form>
+</section>
