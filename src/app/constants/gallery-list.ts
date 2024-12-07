@@ -1,32 +1,41 @@
-const IMIRIM_PROJECT_NAME = 'Casa Imirim Cachoeirinha';
-const PIMENTAS_PROJECT_NAME = 'Casa Pimentas';
+import { CarouselItem } from '../components/carousel/carousel.component';
+const IMIRIM_PROJECT_NAME = 'Casa de Imirim Cachoeirinha';
+const PIMENTAS_PROJECT_NAME = 'Casa do Pimentas';
 
-export const GALLERY_LIST = [
+export interface GalleryItem {
+  id: string;
+  name: string;
+  mainPhoto: string;
+  generalDescription: string;
+  photos: CarouselItem[];
+}
+
+export const GALLERY_LIST: GalleryItem[] = [
   {
     id: 'imirim',
     name: IMIRIM_PROJECT_NAME,
     mainPhoto: 'imirim-5.jpg',
     generalDescription:
-      'Verificar medidas da construção pra regularização do imóvel junto a prefeitura, receita federal e Cartório.',
+      'Verificar medidas da construção pra regularização do imóvel junto a prefeitura, Receita Federal e cartório.',
     photos: [
       {
-        name: 'imirim-5.jpg',
+        image: 'imirim-5.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
       {
-        name: 'imirim-2.jpg',
+        image: 'imirim-2.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
       {
-        name: 'imirim-3.jpg',
+        image: 'imirim-3.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
       {
-        name: 'imirim-4.jpg',
+        image: 'imirim-4.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
       {
-        name: 'imirim-1.jpg',
+        image: 'imirim-1.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
     ],
@@ -36,18 +45,18 @@ export const GALLERY_LIST = [
     name: PIMENTAS_PROJECT_NAME,
     mainPhoto: 'pimentas-3.jpg',
     generalDescription:
-      'Regularização de imóvel verificar medidas do terreno e construção para regularizar o imóvel junto a prefeitura.',
+      'Regularização de imóvel, verificar medidas do terreno e construção para regularizar o imóvel junto a prefeitura.',
     photos: [
       {
-        name: 'pimentas-3.jpg',
+        image: 'pimentas-3.jpg',
         description: PIMENTAS_PROJECT_NAME,
       },
       {
-        name: 'pimentas-1.jpg',
+        image: 'pimentas-1.jpg',
         description: PIMENTAS_PROJECT_NAME,
       },
       {
-        name: 'pimentas-2.jpg',
+        image: 'pimentas-2.jpg',
         description: PIMENTAS_PROJECT_NAME,
       },
     ],

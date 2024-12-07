@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
@@ -10,6 +10,9 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
   styleUrl: './modal.component.scss',
 })
 export class ModalComponent {
-  @Input() showModal: boolean = false;
-  @Input() onToogleModal!: () => void;
+  showModal: boolean = false;
+
+  onToggleModal(): void {
+    this.showModal = !this.showModal;
+  }
 }

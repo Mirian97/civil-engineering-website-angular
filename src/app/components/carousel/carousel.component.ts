@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
-interface CarouselItem {
-  name: string;
+export interface CarouselItem {
+  image: string;
   description: string;
 }
 
@@ -14,18 +14,18 @@ interface CarouselItem {
   styleUrl: './carousel.component.scss',
 })
 export class CarouselComponent {
+  @Input() images: CarouselItem[] = [];
+
   customOptions: OwlOptions = {
     loop: true,
+    margin: 0,
     autoplay: true,
-    center: true,
-    dots: true,
-    mouseDrag: false,
-    touchDrag: false,
-    autoHeight: true,
-    autoWidth: true,
+    nav: false,
+    navText: ['', ''],
+    lazyLoad: true,
     responsive: {
-      600: {
-        items: 3,
+      0: {
+        items: 1,
       },
     },
   };

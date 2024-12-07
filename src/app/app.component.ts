@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 import { FloatingContactComponent } from './components/floating-contact/floating-contact.component';
 import { FooterSectionComponent } from './components/footer-section/footer-section.component';
@@ -13,6 +14,7 @@ import { ServicesSectionComponent } from './components/services-section/services
   standalone: true,
   imports: [
     CommonModule,
+    CarouselModule,
     HeroSectionComponent,
     ServicesSectionComponent,
     FooterSectionComponent,
