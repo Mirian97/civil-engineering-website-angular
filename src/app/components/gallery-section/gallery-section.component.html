@@ -14,10 +14,10 @@
       <p>{{ item.generalDescription }}</p>
     </div>
   </div>
-  <ng-container *ngIf="selectedGallery$ | async as selectedGallery">
+  <!-- <ng-container *ngIf="selectedGallery$ | async as selectedGallery">
     <app-modal #modal>
       <h5 class="gallery-title">{{ selectedGallery.name }}</h5>
       <app-carousel [images]="selectedGallery.photos" />
     </app-modal>
-  </ng-container>
+  </ng-container> -->
 </section>
