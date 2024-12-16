@@ -1,0 +1,13 @@
+<owl-carousel-o [options]="customOptions">
+  @for (item of images; track item.image) {
+  <ng-template carouselSlide [id]="item.image">
+    <div class="wrapper-image">
+      <img
+        [src]="'/images/' + item.image"
+        [alt]="item.description"
+        loading="lazy"
+      />
+    </div>
+  </ng-template>
+  }
+</owl-carousel-o>

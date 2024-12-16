@@ -1,0 +1,43 @@
+.contact-section {
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+    margin: 32px 12px auto;
+
+    :has(button) {
+      margin-top: 8px;
+    }
+  }
+
+  input,
+  textarea {
+    all: unset;
+    padding: 8px 12px;
+    color: var(--gray);
+    border: none;
+    outline: 1px solid rgb(184, 184, 184);
+    border-radius: 3px;
+    font-size: 14px;
+    width: 100%;
+    transition: outline 0.1s ease-in-out;
+
+    &::placeholder {
+      color: rgb(182, 182, 182);
+    }
+
+    &:hover {
+      outline-color: rgb(119, 119, 119);
+    }
+
+    &:focus {
+      outline: 2px solid #fdba74;
+    }
+  }
+}

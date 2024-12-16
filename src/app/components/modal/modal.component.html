@@ -1,0 +1,8 @@
+<div class="backdrop" (click)="onToggleModal()" *ngIf="showModal">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <button (click)="onToggleModal()">
+      <app-svg-icon iconName="close" />
+    </button>
+    <ng-content></ng-content>
+  </div>
+</div>

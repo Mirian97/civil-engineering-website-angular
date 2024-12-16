@@ -23,6 +23,28 @@
   background-color: none;
 }
 
+.mobile-menu {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  z-index: 2;
+  background: var(--orange);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 18px;
+
+  a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 764px) {
   .menu {
     display: none;
