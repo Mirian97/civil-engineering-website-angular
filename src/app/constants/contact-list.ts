@@ -1,5 +1,8 @@
 export const CONTACT_LIST_FOOTER = [
-  { icon: 'phone', link: 'https://w.app/zqyZ3O' },
+  {
+    icon: 'phone',
+    link: 'https://wa.me/5511988343235?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20um%20servi%C3%A7o...',
+  },
   {
     icon: 'email',
     link: 'https://mail.google.com/mail/?view=cm&fs=1&to=eliorodrigues68@gmail.com',
@@ -25,6 +28,6 @@ export const CONTACT_LIST_FLOATING = [
   },
   {
     icon: 'whatsapp',
-    link: 'https://w.app/zqyZ3O',
+    link: 'https://wa.me/5511988343235?text=Ol%C3%A1,%20gostaria%20de%20conversar%20sobre%20um%20servi%C3%A7o...',
   },
 ];
