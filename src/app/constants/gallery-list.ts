@@ -19,10 +19,6 @@ export const GALLERY_LIST: GalleryItem[] = [
       'Verificar medidas da construção pra regularização do imóvel junto a prefeitura, Receita Federal e cartório.',
     photos: [
       {
-        image: 'imirim-5.jpg',
-        description: IMIRIM_PROJECT_NAME,
-      },
-      {
         image: 'imirim-2.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
@@ -38,6 +34,10 @@ export const GALLERY_LIST: GalleryItem[] = [
         image: 'imirim-1.jpg',
         description: IMIRIM_PROJECT_NAME,
       },
+      {
+        image: 'imirim-5.jpg',
+        description: IMIRIM_PROJECT_NAME,
+      },
     ],
   },
   {
@@ -48,15 +48,15 @@ export const GALLERY_LIST: GalleryItem[] = [
       'Regularização de imóvel, verificar medidas do terreno e construção para regularizar o imóvel junto a prefeitura.',
     photos: [
       {
-        image: 'pimentas-3.jpg',
-        description: PIMENTAS_PROJECT_NAME,
-      },
-      {
         image: 'pimentas-1.jpg',
         description: PIMENTAS_PROJECT_NAME,
       },
       {
         image: 'pimentas-2.jpg',
+        description: PIMENTAS_PROJECT_NAME,
+      },
+      {
+        image: 'pimentas-3.jpg',
         description: PIMENTAS_PROJECT_NAME,
       },
     ],

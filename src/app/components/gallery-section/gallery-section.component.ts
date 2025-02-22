@@ -19,7 +19,8 @@ import { TitleSectionComponent } from '../title-section/title-section.component'
   styleUrl: './gallery-section.component.scss',
 })
 export class GallerySectionComponent {
-  @ViewChild('modal') modal?: ModalComponent;
+  @ViewChild(ModalComponent) modal?: ModalComponent;
+  @ViewChild(CarouselComponent) carousel?: CarouselComponent;
   galleryList = GALLERY_LIST;
   private selectedGallerySubject = new BehaviorSubject<GalleryItem | undefined>(
     undefined
@@ -30,8 +31,11 @@ export class GallerySectionComponent {
     const selectedGallery = this.galleryList.find(
       (item) => item.id === galleryID
     );
-    if (selectedGallery === undefined) return;
+
+    if (!selectedGallery) return;
+
     this.selectedGallerySubject.next(selectedGallery);
+    this.carousel?.reinitializeSwiper();
     this.modal?.onToggleModal();
   }
 }

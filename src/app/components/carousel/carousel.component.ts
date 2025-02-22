@@ -1,10 +1,13 @@
 import {
+  AfterViewInit,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Input,
   ViewChild,
 } from '@angular/core';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Swiper, SwiperOptions } from 'swiper/types';
 
 export interface CarouselItem {
@@ -20,27 +23,34 @@ export interface CarouselItem {
   styleUrl: './carousel.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
   @Input() images: CarouselItem[] = [];
-
   @ViewChild('swiperRef', { static: true })
-  protected _swiperRef?: ElementRef | undefined;
+  protected swiperRef?: ElementRef | undefined;
   swiper?: Swiper;
 
-  ngOnInit() {
-    this._initSwiper();
-  }
-
-  private _initSwiper() {
+  private initSwiper() {
+    if (this.swiper) {
+      this.swiper.destroy(true, true);
+    }
     const options: SwiperOptions = {
-      pagination: true,
+      pagination: {
+        clickable: false,
+        enabled: true,
+      },
       slidesPerView: 1,
     };
-    const swiperEl = this._swiperRef?.nativeElement;
+    const swiperEl = this.swiperRef?.nativeElement;
     Object.assign(swiperEl, options);
     swiperEl.initialize();
-    if (this.swiper) this.swiper.currentBreakpoint = false;
-    this.swiper = this._swiperRef?.nativeElement.swiper;
-    this.swiper?.off('slideChange');
+    this.swiper = swiperEl.swiper;
+  }
+
+  ngAfterViewInit() {
+    this.initSwiper();
+  }
+
+  public reinitializeSwiper() {
+    setTimeout(() => this.initSwiper());
   }
 }
