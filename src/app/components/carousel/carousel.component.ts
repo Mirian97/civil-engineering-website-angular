@@ -30,9 +30,6 @@ export class CarouselComponent implements AfterViewInit {
   swiper?: Swiper;
 
   private initSwiper() {
-    if (this.swiper) {
-      this.swiper.destroy(true, true);
-    }
     const options: SwiperOptions = {
       pagination: {
         clickable: false,
@@ -41,6 +38,7 @@ export class CarouselComponent implements AfterViewInit {
       slidesPerView: 1,
     };
     const swiperEl = this.swiperRef?.nativeElement;
+    if (!swiperEl) return;
     Object.assign(swiperEl, options);
     swiperEl.initialize();
     this.swiper = swiperEl.swiper;
@@ -51,6 +49,6 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   public reinitializeSwiper() {
-    setTimeout(() => this.initSwiper());
+    this.initSwiper();
   }
 }
