@@ -31,9 +31,7 @@ export class GallerySectionComponent {
     const selectedGallery = this.galleryList.find(
       (item) => item.id === galleryID
     );
-
-    if (!selectedGallery) return;
-
+    if (selectedGallery === undefined) return;
     this.selectedGallerySubject.next(selectedGallery);
     this.carousel?.reinitializeSwiper();
     this.modal?.onToggleModal();
