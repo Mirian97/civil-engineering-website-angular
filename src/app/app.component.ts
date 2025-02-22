@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { register } from 'swiper/element/bundle';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 import { FloatingContactComponent } from './components/floating-contact/floating-contact.component';
 import { FooterSectionComponent } from './components/footer-section/footer-section.component';
@@ -28,4 +29,8 @@ import { ServicesSectionComponent } from './components/services-section/services
 })
 export class AppComponent {
   title = 'Elio Rodrigues | Engenharia';
+
+  constructor() {
+    register();
+  }
 }

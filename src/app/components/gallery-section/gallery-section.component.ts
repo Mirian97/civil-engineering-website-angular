@@ -19,12 +19,12 @@ import { TitleSectionComponent } from '../title-section/title-section.component'
   styleUrl: './gallery-section.component.scss',
 })
 export class GallerySectionComponent {
+  @ViewChild('modal') modal?: ModalComponent;
   galleryList = GALLERY_LIST;
   private selectedGallerySubject = new BehaviorSubject<GalleryItem | undefined>(
     undefined
   );
   selectedGallery$ = this.selectedGallerySubject.asObservable();
-  @ViewChild('modal') modal!: ModalComponent;
 
   onOpenModal(galleryID: string): void {
     const selectedGallery = this.galleryList.find(
@@ -32,6 +32,6 @@ export class GallerySectionComponent {
     );
     if (selectedGallery === undefined) return;
     this.selectedGallerySubject.next(selectedGallery);
-    this.modal.onToggleModal();
+    this.modal?.onToggleModal();
   }
 }

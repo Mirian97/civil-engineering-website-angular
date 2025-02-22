@@ -1,13 +1,14 @@
-<owl-carousel-o [options]="customOptions">
+<swiper-container #swiperRef init="false">
   @for (item of images; track item.image) {
-  <ng-template carouselSlide [id]="item.image">
+  <swiper-slide>
     <div class="wrapper-image">
       <img
         [src]="'/images/' + item.image"
         [alt]="item.description"
-        loading="lazy"
+        loading="eager"
+        draggable="false"
       />
     </div>
-  </ng-template>
+  </swiper-slide>
   }
-</owl-carousel-o>
+</swiper-container>

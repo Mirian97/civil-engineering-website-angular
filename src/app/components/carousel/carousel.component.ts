@@ -1,5 +1,11 @@
-import { Component, Input } from '@angular/core';
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import { Swiper, SwiperOptions } from 'swiper/types';
 
 export interface CarouselItem {
   image: string;
@@ -9,24 +15,32 @@ export interface CarouselItem {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CarouselModule],
+  imports: [],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CarouselComponent {
   @Input() images: CarouselItem[] = [];
 
-  customOptions: OwlOptions = {
-    loop: true,
-    margin: 0,
-    autoplay: true,
-    nav: false,
-    navText: ['', ''],
-    lazyLoad: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-    },
-  };
+  @ViewChild('swiperRef', { static: true })
+  protected _swiperRef?: ElementRef | undefined;
+  swiper?: Swiper;
+
+  ngOnInit() {
+    this._initSwiper();
+  }
+
+  private _initSwiper() {
+    const options: SwiperOptions = {
+      pagination: true,
+      slidesPerView: 1,
+    };
+    const swiperEl = this._swiperRef?.nativeElement;
+    Object.assign(swiperEl, options);
+    swiperEl.initialize();
+    if (this.swiper) this.swiper.currentBreakpoint = false;
+    this.swiper = this._swiperRef?.nativeElement.swiper;
+    this.swiper?.off('slideChange');
+  }
 }
