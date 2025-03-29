@@ -39,4 +39,14 @@ button {
   &.lg {
     font-weight: 600;
   }
+
+  &:disabled {
+    cursor: default;
+    background-color: grey;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: grey;
+    }
+  }
 }

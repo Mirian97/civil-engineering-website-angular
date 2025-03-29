@@ -12,4 +12,5 @@ export class ButtonComponent {
   @Input() color: 'primary' | 'secondary' | 'tertiary' = 'primary';
   @Input() size: 'lg' | 'md' = 'md';
   @Input() type: 'button' | 'menu' | 'reset' | 'submit' = 'button';
+  @Input() disabled: boolean = false;
 }

@@ -1,6 +1,6 @@
 <section class="section contact-section" id="contato">
   <app-title-section name="Me Contate" />
-  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="contactForm" (submit)="sendEmail($event)">
     <input name="name" placeholder="Seu nome" formControlName="name" />
     <input
       name="email"
@@ -19,8 +19,13 @@
       placeholder="Sua mensagem"
       rows="3"
       formControlName="message"
-      minlength="50"
     ></textarea>
-    <app-button color="tertiary" size="lg" type="submit">Enviar</app-button>
+    <app-button
+      color="tertiary"
+      size="lg"
+      type="submit"
+      [disabled]="!contactForm.valid"
+      >Enviar</app-button
+    >
   </form>
 </section>
