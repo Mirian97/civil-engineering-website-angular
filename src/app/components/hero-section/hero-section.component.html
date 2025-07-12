@@ -1,10 +1,24 @@
 <section id="home" class="home-section">
   <app-navbar />
-  <div class="wrapper-profile">
-    <div>
-      <p>Elio Rodrigues</p>
-      <h1>Engenheiro Civil</h1>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-name">Elio Rodrigues</p>
+      <h1 class="hero-title">Engenheiro Civil</h1>
+      <p class="hero-subtitle">Transformando sonhos em estruturas sólidas</p>
+      <p class="hero-description">
+        Especialista em projetos estruturais, construção civil e consultoria
+        técnica. Mais de 5 anos de experiência em obras residenciais,
+        comerciais.
+      </p>
+      <div class="hero-actions">
+        <app-button color="primary" size="lg" (click)="scrollToServices()">
+          Ver Serviços
+        </app-button>
+      </div>
     </div>
-    <img src="/images/person-1.png" alt="Engenheiro Elio Rogrigues" />
+    <div class="hero-image">
+      <img src="/images/person-1.png" alt="Engenheiro Elio Rodrigues" />
+      <div class="image-decoration"></div>
+    </div>
   </div>
 </section>

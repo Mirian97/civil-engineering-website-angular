@@ -1,65 +1,194 @@
 .home-section {
-  background-image: url("/images/banner-hero.png");
-  background-size: 100%;
+  background-image: linear-gradient(
+      135deg,
+      rgba(37, 47, 45, 0.9) 0%,
+      rgba(37, 47, 45, 0.7) 100%
+    ),
+    url("/images/banner-hero.png");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  min-height: 600px;
+  min-height: 100vh;
   width: 100%;
-  float: left;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  position: relative;
+  overflow: hidden;
   padding: 0 32px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(253, 126, 20, 0.1) 0%,
+      transparent 50%,
+      rgba(253, 126, 20, 0.05) 100%
+    );
+    pointer-events: none;
+  }
 }
 
-.wrapper-profile {
+.hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 40px;
+  padding: 120px 32px 80px;
+  gap: 60px;
   width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text {
   text-align: center;
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out;
 
-  div {
+  .hero-name {
+    color: var(--orange);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .hero-title {
     color: var(--white);
-    padding: 0 0 20px 20px;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
 
-    h1 {
-      font-weight: 600;
-      font-size: 44px;
-      line-height: 1.1;
-      -webkit-text-stroke: 1px;
-      -webkit-text-stroke-color: var(--gray);
+  .hero-subtitle {
+    color: var(--orange);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+  }
+
+  .hero-description {
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.8s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    animation: fadeInUp 1s ease-out 1s both;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
     }
   }
+}
+
+.hero-image {
+  position: relative;
+  animation: fadeInUp 1s ease-out 1.2s both;
 
   img {
     height: 280px;
-    z-index: 1;
+    width: 280px;
+    object-fit: cover;
     border-radius: 50%;
     border: 6px solid var(--orange);
     background-color: var(--gray);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .image-decoration {
+    inset: -20px;
+    opacity: 0.3;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+    gap: 80px;
+    padding: 140px 60px 100px;
+  }
+
+  .hero-text {
+    text-align: left;
+    flex: 1;
+
+    .hero-actions {
+      justify-content: flex-start;
+    }
+  }
+
+  .hero-image {
+    flex-shrink: 0;
+
+    img {
+      height: 320px;
+      width: 320px;
+    }
   }
 }
 
 @media (min-width: 1024px) {
-  .home-section {
+  .hero-content {
     gap: 100px;
-    padding: 0 90px;
+    padding: 160px 80px 120px;
   }
 
-  .wrapper-profile {
-    flex-direction: row;
-    text-align: left;
-
-    div {
-      padding: 0 0 140px 20px;
-    }
-
-    img {
-      height: 340px;
-    }
+  .hero-image img {
+    height: 380px;
+    width: 380px;
   }
+}
+
+@media (min-width: 1200px) {
+  .hero-content {
+    gap: 120px;
+  }
+
+  .hero-image img {
+    height: 420px;
+    width: 420px;
+  }
+}
+
+.hero-text .hero-title:hover {
+  text-shadow: 2px 2px 8px rgba(253, 126, 20, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-text .hero-subtitle:hover {
+  color: var(--white);
+  transition: color 0.3s ease;
 }
