@@ -19,10 +19,6 @@ export class FormationSectionComponent implements AfterViewInit {
   educationList = EDUCATION_LIST;
   @ViewChildren('formationItem') educationItems!: QueryList<ElementRef>;
 
-  ngAfterViewInit() {
-    this.observeEducationItems();
-  }
-
   private observeEducationItems() {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,5 +39,9 @@ export class FormationSectionComponent implements AfterViewInit {
     this.educationItems.forEach((item) => {
       observer.observe(item.nativeElement);
     });
+  }
+
+  ngAfterViewInit() {
+    this.observeEducationItems();
   }
 }

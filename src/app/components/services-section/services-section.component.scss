@@ -22,7 +22,7 @@
     align-items: center;
     padding-top: 50px;
     color: var(--gray);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     gap: 4px;
     cursor: pointer;
 
@@ -33,6 +33,16 @@
 
     &:hover {
       color: var(--yellow);
+    }
+
+    &:not(.animate-in) {
+      opacity: 0;
+      transform: scale(0.65);
+    }
+
+    &.animate-in {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }

@@ -2,7 +2,7 @@
   <app-title-section name="Serviços Prestados" />
   <div class="service-list">
     @for (item of serviceList; track item.name) {
-    <div class="service-item">
+    <div class="service-item" #serviceItem>
       <app-svg-icon
         [iconName]="item.iconPath"
         [height]="44"
